@@ -48,8 +48,8 @@ class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(obj: GithubDataModel) {
         title.text = obj.title
-        userName.text = obj.title
-        createdDate.text = obj.title
-        closedDate.text = obj.title
+        userName.text = obj.userName
+        createdDate.text = obj.createdDate
+        closedDate.text = obj.closedDate
     }
 }
