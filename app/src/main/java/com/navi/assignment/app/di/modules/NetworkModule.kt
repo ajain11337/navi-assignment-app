@@ -1,4 +1,4 @@
-package com.navi.assignment.app.di
+package com.navi.assignment.app.di.modules
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

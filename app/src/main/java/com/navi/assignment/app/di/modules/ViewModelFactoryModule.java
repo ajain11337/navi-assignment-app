@@ -1,4 +1,4 @@
-package com.navi.assignment.app.di;
+package com.navi.assignment.app.di.modules;
 
 import androidx.lifecycle.ViewModelProvider;
 import com.navi.assignment.app.common.ViewModelProviderFactory;
