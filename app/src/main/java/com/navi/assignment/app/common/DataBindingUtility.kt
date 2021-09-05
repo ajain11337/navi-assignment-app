@@ -1,5 +1,6 @@
 package com.navi.assignment.app.common
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
@@ -38,5 +39,12 @@ object DataBindingUtility {
         } catch (e: ParseException) {
             Log.d(TAG, "setDateText: + ${e.localizedMessage}")
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    @JvmStatic
+    @BindingAdapter("app:username")
+    fun setUserName(textView: TextView, username: String) {
+        textView.text = "Author : $username"
     }
 }
