@@ -2,17 +2,13 @@ package com.navi.assignment.app.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.navi.assignment.app.R
 import com.navi.assignment.app.data.model.GithubDataModel
 import androidx.databinding.ViewDataBinding
 import com.navi.assignment.app.BR
-
 
 open class GithubListAdapter : RecyclerView.Adapter<BaseViewHolder>() {
 
@@ -49,7 +45,6 @@ class BaseViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHo
 
 /**
  * Show Loader
- * Mapping data, date + image
  * Name refactoring
  * Module Refactoring
  */

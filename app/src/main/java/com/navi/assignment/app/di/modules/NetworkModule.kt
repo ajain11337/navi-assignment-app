@@ -6,8 +6,8 @@ import com.navi.assignment.app.common.Constants
 import com.navi.assignment.app.data.GetClosedPRUseCaseImpl
 import com.navi.assignment.app.data.GetPRUseCase
 import com.navi.assignment.app.domain.GithubService
-import com.navi.assignment.app.domain.Repository
-import com.navi.assignment.app.domain.RepositoryImpl
+import com.navi.assignment.app.domain.GithubRepository
+import com.navi.assignment.app.domain.GithubRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -63,6 +63,6 @@ class NetworkModule {
         getPRUseCaseImpl
 
     @Provides
-    fun providesRepository(repositoryImpl: RepositoryImpl): Repository =
+    fun providesRepository(repositoryImpl: GithubRepositoryImpl): GithubRepository =
         repositoryImpl
 }

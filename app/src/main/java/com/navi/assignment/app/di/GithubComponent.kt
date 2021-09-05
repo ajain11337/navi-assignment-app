@@ -1,6 +1,6 @@
 package com.navi.assignment.app.di
 
-import com.navi.assignment.app.BaseActivity
+import com.navi.assignment.app.ui.GithubActivity
 import com.navi.assignment.app.di.modules.BaseViewModelsModule
 import com.navi.assignment.app.di.modules.NetworkModule
 import com.navi.assignment.app.di.modules.ViewModelFactoryModule
@@ -18,5 +18,5 @@ import javax.inject.Singleton
 @Singleton
 interface GithubComponent {
     fun inject(baseFragment: BaseFragment)
-    fun inject(baseActivity: BaseActivity)
+    fun inject(githubActivity: GithubActivity)
 }

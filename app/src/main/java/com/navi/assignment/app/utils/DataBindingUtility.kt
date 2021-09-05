@@ -1,4 +1,4 @@
-package com.navi.assignment.app.common
+package com.navi.assignment.app.utils
 
 import android.annotation.SuppressLint
 import android.util.Log

@@ -1,4 +1,4 @@
-package com.navi.assignment.app.common
+package com.navi.assignment.app.utils
 
 import com.navi.assignment.app.data.model.GithubDataModel
 import com.navi.assignment.app.domain.model.GithubDomainModel

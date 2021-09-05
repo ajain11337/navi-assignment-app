@@ -3,7 +3,7 @@ package com.navi.assignment.app.ui
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.navi.assignment.app.common.GithubDataMapper
+import com.navi.assignment.app.utils.GithubDataMapper
 import com.navi.assignment.app.common.PRStatus
 import com.navi.assignment.app.data.GetPRUseCase
 import com.navi.assignment.app.data.model.GithubDataModel

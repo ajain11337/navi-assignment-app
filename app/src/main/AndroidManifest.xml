@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Naviassignmentapp">
         <activity
-            android:name=".BaseActivity"
+            android:name=".ui.GithubActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

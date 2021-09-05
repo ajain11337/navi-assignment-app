@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import com.navi.assignment.app.R
 import com.navi.assignment.app.di.Injector
 import androidx.lifecycle.ViewModelProviders
@@ -46,7 +45,7 @@ class BaseFragment : Fragment() {
     }
 
     private fun setObservers() {
-        viewModel.list.observe(viewLifecycleOwner, Observer {
+        viewModel.list.observe(viewLifecycleOwner, {
             gitHubAdapter?.updateList(it)
         })
     }

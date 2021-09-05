@@ -1,7 +1,7 @@
 package com.navi.assignment.app.data
 
 import com.navi.assignment.app.common.PRStatus
-import com.navi.assignment.app.domain.Repository
+import com.navi.assignment.app.domain.GithubRepository
 import com.navi.assignment.app.domain.model.GithubDomainModel
 import retrofit2.Response
 import javax.inject.Inject
@@ -11,7 +11,7 @@ interface GetPRUseCase {
 }
 
 class GetClosedPRUseCaseImpl @Inject constructor(
-    private val repository: Repository
+    private val repository: GithubRepository
 ) : GetPRUseCase {
     override suspend fun execute(
         status: String,

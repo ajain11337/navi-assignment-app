@@ -1,11 +1,10 @@
-package com.navi.assignment.app
+package com.navi.assignment.app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.navi.assignment.app.di.Injector
-import com.navi.assignment.app.ui.BaseFragment
+import com.navi.assignment.app.R
 
-class BaseActivity : AppCompatActivity() {
+class GithubActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -14,7 +13,7 @@ class BaseActivity : AppCompatActivity() {
 
     private fun addFragment() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, BaseFragment())
+            .replace(R.id.container, BaseFragment())
             .commit()
     }
 }

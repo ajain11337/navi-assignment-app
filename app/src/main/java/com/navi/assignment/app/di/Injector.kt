@@ -1,6 +1,6 @@
 package com.navi.assignment.app.di
 
-import com.navi.assignment.app.BaseActivity
+import com.navi.assignment.app.ui.GithubActivity
 import com.navi.assignment.app.ui.BaseFragment
 
 object Injector {
@@ -10,7 +10,7 @@ object Injector {
         component.inject(baseFragment)
     }
 
-    fun inject(baseActivity: BaseActivity) {
-        component.inject(baseActivity)
+    fun inject(githubActivity: GithubActivity) {
+        component.inject(githubActivity)
     }
 }
