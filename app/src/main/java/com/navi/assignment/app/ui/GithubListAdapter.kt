@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.navi.assignment.app.R
 import com.navi.assignment.app.data.model.GithubDataModel
@@ -30,7 +32,7 @@ open class GithubListAdapter : RecyclerView.Adapter<ViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    open fun updateList(li : List<GithubDataModel>){
+    open fun updateList(li: List<GithubDataModel>) {
         this.list.clear()
         this.list = ArrayList(li)
         notifyDataSetChanged()
@@ -38,10 +40,16 @@ open class GithubListAdapter : RecyclerView.Adapter<ViewHolder>() {
 }
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val imageView: ImageView = itemView.findViewById(R.id.imageview)
-    val textView: TextView = itemView.findViewById(R.id.textView)
+    val title: AppCompatTextView = itemView.findViewById(R.id.title)
+    val userName: AppCompatTextView = itemView.findViewById(R.id.userName)
+    val createdDate: AppCompatTextView = itemView.findViewById(R.id.createdDate)
+    val closedDate: AppCompatTextView = itemView.findViewById(R.id.closedDate)
+    val avatarImage: AppCompatImageView = itemView.findViewById(R.id.avatarImage)
 
     fun bind(obj: GithubDataModel) {
-        textView.text = obj.title
+        title.text = obj.title
+        userName.text = obj.title
+        createdDate.text = obj.title
+        closedDate.text = obj.title
     }
 }
