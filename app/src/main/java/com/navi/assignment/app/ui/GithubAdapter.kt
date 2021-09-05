@@ -10,17 +10,17 @@ import com.navi.assignment.app.data.model.GithubDataModel
 import androidx.databinding.ViewDataBinding
 import com.navi.assignment.app.BR
 
-open class GithubListAdapter : RecyclerView.Adapter<BaseViewHolder>() {
+open class GithubListAdapter : RecyclerView.Adapter<GithubViewHolder>() {
 
     var list: MutableList<GithubDataModel> = ArrayList()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, R.layout.list_item, parent, false)
-        return BaseViewHolder(binding)
+        return GithubViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GithubViewHolder, position: Int) {
         val obj = list[position]
         holder.bind(obj)
     }
@@ -37,14 +37,8 @@ open class GithubListAdapter : RecyclerView.Adapter<BaseViewHolder>() {
     }
 }
 
-class BaseViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
+class GithubViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bind(obj: GithubDataModel) {
         binding.setVariable(BR.model, obj)
     }
 }
-
-/**
- * Show Loader
- * Name refactoring
- * Module Refactoring
- */
