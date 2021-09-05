@@ -9,7 +9,7 @@ import retrofit2.http.Url
 interface GithubService {
 
     @GET
-    suspend fun getAllMovies(
+    suspend fun getAllPullRequests(
         @Url url: String,
         @Query("state") state: String,
         @Query("page") page: Int,
