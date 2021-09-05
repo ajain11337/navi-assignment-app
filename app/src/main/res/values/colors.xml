@@ -10,6 +10,7 @@
     <color name="gray_50">#FAFAFA</color>
     <color name="gray_200">#EEEEEE</color>
     <color name="gray_300">#E0E0E0</color>
+    <color name="gray_800">#424242</color>
     <color name="red_600">#E53935</color>
     <color name="red_800">#C62828</color>
 </resources>

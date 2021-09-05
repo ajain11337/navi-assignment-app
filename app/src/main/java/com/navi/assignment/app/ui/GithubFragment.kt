@@ -11,7 +11,7 @@ import com.navi.assignment.app.di.Injector
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.navi.assignment.app.common.ViewModelProviderFactory
-import com.navi.assignment.app.databinding.FragmentBaseBinding
+import com.navi.assignment.app.databinding.FragmentGithubBinding
 import javax.inject.Inject
 
 class GithubFragment : Fragment() {
@@ -19,7 +19,7 @@ class GithubFragment : Fragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
 
-    private lateinit var binding: FragmentBaseBinding
+    private lateinit var binding: FragmentGithubBinding
     private lateinit var viewModel: GithubViewModel
     private var gitHubAdapter: GithubListAdapter? = null
 
@@ -32,16 +32,20 @@ class GithubFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_github, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
+        initViewModel()
         setObservers()
         setAdapters()
-        viewModel.getPullRequestList()
+        callAPI()
+    }
+
+    private fun initViewModel(){
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
     }
 
     private fun setObservers() {
@@ -56,5 +60,9 @@ class GithubFragment : Fragment() {
             adapter = gitHubAdapter
             layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         }
+    }
+
+    private fun callAPI(){
+        viewModel.getPullRequestList()
     }
 }

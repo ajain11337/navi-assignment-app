@@ -16,7 +16,7 @@ open class GithubListAdapter : RecyclerView.Adapter<GithubViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, R.layout.list_item, parent, false)
+        val binding = DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, R.layout.github_closed_list_item, parent, false)
         return GithubViewHolder(binding)
     }
 

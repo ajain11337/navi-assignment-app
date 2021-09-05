@@ -8,7 +8,6 @@
         <variable
             name="model"
             type="com.navi.assignment.app.data.model.GithubDataModel" />
-
     </data>
 
 
@@ -24,15 +23,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UseCompoundDrawables">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/avatarImage"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:imgUrl="@{model.userImageUrl}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
             android:layout_width="0dp"
@@ -43,43 +33,13 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatarImage"
-            app:layout_constraintTop_toTopOf="@+id/avatarImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Opened Branch for Merge Request" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:layout_constraintStart_toStartOf="@+id/title"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:username="@{model.userName}"
-            tools:text="Author : Abhishek Jain" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/createdDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            app:date="@{model.createdDate}"
-            app:layout_constraintStart_toStartOf="@+id/userName"
-            app:layout_constraintTop_toBottomOf="@+id/userName"
-            tools:text="Created : 12 July, 2021" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/closedDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            app:date="@{model.closedDate}"
-            app:layout_constraintStart_toEndOf="@+id/createdDate"
-            app:layout_constraintTop_toTopOf="@+id/createdDate"
-            tools:text="Closed : 12 July, 2021" />
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/status"
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@drawable/background_status_closed"
@@ -88,13 +48,56 @@
             android:paddingTop="2dp"
             android:paddingEnd="5dp"
             android:paddingBottom="2dp"
-            android:text="Closed"
+            android:text="@string/closed"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/createdDate"
-            app:layout_constraintTop_toBottomOf="@+id/createdDate">
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/avatarImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:imgUrl="@{model.userImageUrl}"
+            app:layout_constraintBottom_toBottomOf="@+id/status"
+            app:layout_constraintStart_toEndOf="@+id/status"
+            app:layout_constraintTop_toTopOf="@+id/status"
+            tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@{model.getAuthorString()}"
+            android:textColor="@color/gray_800"
+            app:layout_constraintBottom_toBottomOf="@+id/avatarImage"
+            app:layout_constraintStart_toEndOf="@+id/avatarImage"
+            app:layout_constraintTop_toTopOf="@+id/avatarImage"
+            tools:text="Abhishek Jain" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createdDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{model.getCreatedDateString()}"
+            android:textColor="@color/gray_800"
+            app:layout_constraintStart_toStartOf="@+id/status"
+            app:layout_constraintTop_toBottomOf="@+id/status"
+            tools:text="Created : 12 July, 2021" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/closedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{model.getClosedDateString()}"
+            android:textColor="@color/gray_800"
+            app:layout_constraintStart_toStartOf="@+id/createdDate"
+            app:layout_constraintTop_toBottomOf="@+id/createdDate"
+            tools:text="Closed : 12 July, 2021" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

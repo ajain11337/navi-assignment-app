@@ -7,4 +7,5 @@ object Constants {
     const val DEFAULT_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZ"
     const val PAGE_NUMBER = 1
     const val PER_PAGE_COUNT = 30
+    const val EMPTY = ""
 }
