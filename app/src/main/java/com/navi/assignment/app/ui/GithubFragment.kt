@@ -14,13 +14,13 @@ import com.navi.assignment.app.common.ViewModelProviderFactory
 import com.navi.assignment.app.databinding.FragmentBaseBinding
 import javax.inject.Inject
 
-class BaseFragment : Fragment() {
+class GithubFragment : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProviderFactory
 
     private lateinit var binding: FragmentBaseBinding
-    private lateinit var viewModel: BaseViewModel
+    private lateinit var viewModel: GithubViewModel
     private var gitHubAdapter: GithubListAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,7 @@ class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(BaseViewModel::class.java)
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(GithubViewModel::class.java)
         setObservers()
         setAdapters()
         viewModel.getPullRequestList()

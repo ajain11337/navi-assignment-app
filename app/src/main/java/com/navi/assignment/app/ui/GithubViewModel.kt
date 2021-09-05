@@ -3,9 +3,9 @@ package com.navi.assignment.app.ui
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.navi.assignment.app.utils.GithubDataMapper
-import com.navi.assignment.app.common.PRStatus
-import com.navi.assignment.app.data.GetPRUseCase
+import com.navi.assignment.app.utils.GithubMapper
+import com.navi.assignment.app.common.PullRequestState
+import com.navi.assignment.app.data.GetGithubUseCase
 import com.navi.assignment.app.data.model.GithubDataModel
 import com.navi.assignment.app.domain.model.GithubDomainModel
 import kotlinx.coroutines.CoroutineScope
@@ -13,17 +13,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class BaseViewModel @Inject constructor(
-    private val getPRUseCase: GetPRUseCase,
-    private val mapper: GithubDataMapper
+class GithubViewModel @Inject constructor(
+    private val getGithubUseCase: GetGithubUseCase,
+    private val mapper: GithubMapper
 ): ViewModel(){
 
     var list = MutableLiveData<List<GithubDataModel>>()
 
     fun getPullRequestList(){
         CoroutineScope(Dispatchers.IO).launch {
-            val response = getPRUseCase.execute(
-                PRStatus.CLOSED,
+            val response = getGithubUseCase.execute(
+                PullRequestState.CLOSED,
                 1,
                 30
             )

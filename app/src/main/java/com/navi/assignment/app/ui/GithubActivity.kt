@@ -13,7 +13,7 @@ class GithubActivity : AppCompatActivity() {
 
     private fun addFragment() {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, BaseFragment())
+            .replace(R.id.container, GithubFragment())
             .commit()
     }
 }

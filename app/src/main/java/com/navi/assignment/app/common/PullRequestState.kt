@@ -1,5 +1,5 @@
 package com.navi.assignment.app.common
 
-object PRStatus {
+object PullRequestState {
     const val CLOSED = "closed"
 }

@@ -1,13 +1,7 @@
-package com.navi.assignment.app.di.modules
+package com.navi.assignment.app.common
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.navi.assignment.app.common.Constants
-import com.navi.assignment.app.data.GetClosedPRUseCaseImpl
-import com.navi.assignment.app.data.GetPRUseCase
-import com.navi.assignment.app.domain.GithubService
-import com.navi.assignment.app.domain.GithubRepository
-import com.navi.assignment.app.domain.GithubRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -17,7 +11,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+class CommonNetworkModule {
 
     private fun getBaseUrl(): String {
         return Constants.BASE_URL
@@ -53,16 +47,4 @@ class NetworkModule {
             .client(okHttpClient)
             .build()
     }
-
-    @Provides
-    fun providesGithubService(retrofit: Retrofit): GithubService =
-        retrofit.create(GithubService::class.java)
-
-    @Provides
-    fun providesGetPRUseCase(getPRUseCaseImpl: GetClosedPRUseCaseImpl): GetPRUseCase =
-        getPRUseCaseImpl
-
-    @Provides
-    fun providesRepository(repositoryImpl: GithubRepositoryImpl): GithubRepository =
-        repositoryImpl
 }

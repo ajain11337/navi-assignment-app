@@ -4,7 +4,7 @@ import com.navi.assignment.app.data.model.GithubDataModel
 import com.navi.assignment.app.domain.model.GithubDomainModel
 import javax.inject.Inject
 
-class GithubDataMapper @Inject constructor(){
+class GithubMapper @Inject constructor(){
     fun mapTo(data: List<GithubDomainModel>): List<GithubDataModel> {
         val list = mutableListOf<GithubDataModel>()
         data.forEach {
