@@ -1,15 +1,8 @@
 package com.navi.assignment.app.utils
 
-import android.annotation.SuppressLint
-import android.util.Log
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.navi.assignment.app.R
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.*
 
 object DataBindingUtility {
     private const val TAG = "DataBindingUtility"

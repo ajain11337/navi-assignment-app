@@ -1,7 +1,5 @@
 package com.navi.assignment.app.data
 
-import com.navi.assignment.app.common.Constants
-import com.navi.assignment.app.common.PullRequestState
 import com.navi.assignment.app.domain.GithubRepository
 import com.navi.assignment.app.domain.model.GithubDomainModel
 import retrofit2.Response
