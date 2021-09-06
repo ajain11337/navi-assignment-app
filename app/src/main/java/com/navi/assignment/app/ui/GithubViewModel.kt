@@ -3,6 +3,7 @@ package com.navi.assignment.app.ui
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.navi.assignment.app.common.Constants
 import com.navi.assignment.app.utils.GithubMapper
 import com.navi.assignment.app.common.PullRequestState
 import com.navi.assignment.app.data.GetGithubUseCase
@@ -23,9 +24,9 @@ class GithubViewModel @Inject constructor(
     fun getPullRequestList(){
         CoroutineScope(Dispatchers.IO).launch {
             val response = getGithubUseCase.execute(
-                PullRequestState.CLOSED,
-                1,
-                30
+                state = PullRequestState.CLOSED,
+                page = Constants.PAGE_NUMBER,
+                per_page = Constants.PER_PAGE_COUNT
             )
             if(response.isSuccessful){
                 Log.d(TAG, "getPullRequestList: " + response.body().toString())

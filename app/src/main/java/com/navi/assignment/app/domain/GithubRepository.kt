@@ -7,16 +7,16 @@ import retrofit2.Response
 import javax.inject.Inject
 
 interface GithubRepository {
-    suspend fun getAllPullRequests(status: String, page: Int, per_page: Int): Response<List<GithubDomainModel>>
+    suspend fun getAllPullRequests(state: String, page: Int, per_page: Int): Response<List<GithubDomainModel>>
 }
 
 class GithubRepositoryImpl @Inject constructor(private val githubService: GithubService) : GithubRepository {
-    override suspend fun getAllPullRequests(status: String, page: Int, per_page: Int): Response<List<GithubDomainModel>> {
+    override suspend fun getAllPullRequests(state: String, page: Int, per_page: Int): Response<List<GithubDomainModel>> {
         return githubService.getAllPullRequests(
             url = Constants.REQUEST_URL,
-            state = PullRequestState.CLOSED,
-            page = Constants.PAGE_NUMBER,
-            per_page = Constants.PER_PAGE_COUNT
+            state = state,
+            page = page,
+            per_page = per_page
         )
     }
 }

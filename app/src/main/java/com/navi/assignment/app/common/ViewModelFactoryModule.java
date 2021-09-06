@@ -1,7 +1,6 @@
 package com.navi.assignment.app.common;
 
 import androidx.lifecycle.ViewModelProvider;
-import com.navi.assignment.app.common.ViewModelProviderFactory;
 import dagger.Binds;
 import dagger.Module;
 
